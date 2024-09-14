@@ -5,4 +5,4 @@ const quoteModel = new mongoose.Schema({
   by: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
 });
 
-export const QuoteModel = mongoose.model("Quote", quoteModel);
+mongoose.model("Quote", quoteModel);
