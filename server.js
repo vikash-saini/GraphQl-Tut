@@ -2,6 +2,9 @@ import { ApolloServer,gql } from "apollo-server";
 import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
 import typeDefs from "./schemaGql.js";
 import resolvers from "./resolvers.js";
+import { connectDB } from "./config.js";
+
+connectDB();
 
 
 const server = new ApolloServer({
