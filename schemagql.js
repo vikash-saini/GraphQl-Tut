@@ -4,27 +4,35 @@ type Query{
     greet:String
     users:[User]
     user(_id:ID!):User
-    quotes:[Quote]
+    quotes:[QuoteWithName]
     iquote(by:ID!):[Quote]
 }
-
+type QuoteWithName{
+    quote:String
+    by:IDNAME
+}
+type IDNAME{
+    _id:ID!
+    firstName:String!
+}
 type User{
     _id:ID!
-    firstName:String
-    lastName:String
-    email:String
+    firstName:String!
+    lastName:String!
+    email:String!
     quotes:[Quote]
 }
 type Quote{
-    quote:String
-    by:ID
+    quote:String!
+    by:ID!
 }
 type Token{
-    token:String
+    token:String!
 }
 type Mutation{
-    SignUpUser(newuser:UserInput):User,
+    SignUpUser(newuser:UserInput):User
     loginInUser(loginUser:loginInput):Token
+    createQuote(quote:String):String
 }
 input UserInput{
     firstName:String!
