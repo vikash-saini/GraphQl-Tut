@@ -1,20 +1,15 @@
 import { useQuery } from "@apollo/client";
 import React, { useEffect } from "react";
 import { GET_ALL_QUOTES } from "../gqlOperations/queries";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 function Home() {
-    
   const { loading, error, data } = useQuery(GET_ALL_QUOTES);
   let navigate = useNavigate();
-
-  const token = localStorage.getItem('token');
-
-if (!token) {
-  console.log("here");
-  
-  navigate("/login");
-}
+  const token = localStorage.getItem("token");
+  if (!token) {
+    navigate("/login");
+  }
 
   // direct api call without Apollo client
   //   useEffect(() => {

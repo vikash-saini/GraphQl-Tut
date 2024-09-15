@@ -6,16 +6,19 @@ function Navbar() {
   const token = localStorage.getItem("token");
   let navigate = useNavigate();
   return (
-    <nav>
-      <div className="nav-wrapper">
-        <a href="#" className="brand-logo">
-          Quotes
-        </a>
+    <nav className="px-3 mb-4">
+      <div className="container nav-wrapper">
+      <Link to="/"></Link>
         <ul id="nav-mobile" className="right hide-on-med-and-down">
           {token ? (
+            <>
             <li>
               <Link to="/login">Logout</Link>
             </li>
+            <li>
+            <Link to="/writequote">Write Quote</Link>
+          </li>
+          </>
           ) : (
             <>
               <li>

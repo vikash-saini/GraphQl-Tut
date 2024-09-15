@@ -17,10 +17,14 @@ import {
   InMemoryCache,
   ApolloProvider,
 } from "@apollo/client";
+import CreateQuote from "./components/CreateQuote";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/",
   cache: new InMemoryCache(),
+  headers:{
+    authorization:localStorage.getItem('token') || ''
+  }
 });
 
 const routes = createBrowserRouter([
@@ -35,6 +39,10 @@ const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/writequote",
+        element: <CreateQuote />,
       },
       {
         path: "/login",

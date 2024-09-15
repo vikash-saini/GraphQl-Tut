@@ -16,4 +16,10 @@ export const LOGIN_USER = gql`
     token
   }
 }
+`;
+
+export const CREATE_QUOTE=gql`
+    mutation addQuote($quote:String){
+  	createQuote(quote:$quote)
+}
 `
