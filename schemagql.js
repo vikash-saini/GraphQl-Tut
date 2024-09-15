@@ -6,6 +6,7 @@ type Query{
     user(_id:ID!):User
     quotes:[QuoteWithName]
     iquote(by:ID!):[Quote]
+    myProfile:User
 }
 type QuoteWithName{
     quote:String

@@ -14,6 +14,7 @@ const resolvers = {
     user: async (_, args) => await UserModel.findOne({_id:args._id}),
     quotes: async() => await QuoteModel.find({}).populate("by","_id firstName"),
     iquote: async(_, args) => await QuoteModel.find({by:args.by}),
+    myProfile: (_,args,context)=> context
   },
   User: {
     quotes: async (usr) => await QuoteModel.find({by:usr._id}),
@@ -32,7 +33,6 @@ const resolvers = {
         ...newuser,
         password: hashedPassword,
       });
-
       return createUser.save();
     },
     loginInUser: async (_, { loginUser }) => {
@@ -62,7 +62,6 @@ const resolvers = {
         by: context._id,
       });
       addQuote.save();
-
       return "Quote added Successfully";
     },
   },

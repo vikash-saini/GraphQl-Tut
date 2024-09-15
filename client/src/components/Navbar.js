@@ -18,6 +18,9 @@ function Navbar() {
             <li>
             <Link to="/writequote">Write Quote</Link>
           </li>
+          <li>
+            <Link to="/profile">Profile</Link>
+          </li>
           </>
           ) : (
             <>

@@ -9,3 +9,12 @@ export const GET_ALL_QUOTES =gql`query getAllquotes{
     }
   }
 }`
+
+export const GET_USER=gql`
+    query getUser{
+  	myProfile{
+      firstName
+      lastName
+      email
+    }
+}`

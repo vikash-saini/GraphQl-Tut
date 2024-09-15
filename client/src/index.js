@@ -18,6 +18,7 @@ import {
   ApolloProvider,
 } from "@apollo/client";
 import CreateQuote from "./components/CreateQuote";
+import Profile from "./components/Profile";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/",
@@ -43,6 +44,10 @@ const routes = createBrowserRouter([
       {
         path: "/writequote",
         element: <CreateQuote />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
       },
       {
         path: "/login",

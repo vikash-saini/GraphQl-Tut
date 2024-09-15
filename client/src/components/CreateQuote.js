@@ -6,7 +6,7 @@ import { GET_ALL_QUOTES } from "../gqlOperations/queries";
 
 function CreateQuote() {
   const [writeQuote, { loading, error, data }] = useMutation(CREATE_QUOTE,{
-    refetchQueries:[GET_ALL_QUOTES,'getAllquotes']
+    refetchQueries:['getAllquotes']
     
   });
   const [formData, setFormData] = useState({});
