@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-
-const MONGO_URL = 'mongodb+srv://vikashsaini:YnUe59HdVqgqKO7s@cluster0.49g55fk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+const MONGO_URL ='';
+// const MONGO_URL = 'mongodb+srv://vikashsaini:YnUe59HdVqgqKO7s@cluster0.49g55fk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 export const JSON_SECRET ="password@000";
 
 export const connectDB=async()=>{
